@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HeatMapModule} from '@syncfusion/ej2-angular-heatmap';
+import { HeatMapModule, HeatMapComponent, LegendService, TooltipService} from '@syncfusion/ej2-angular-heatmap';
 
 import { AppComponent } from './app.component';
 
@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     HeatMapModule
   ],
-  providers: [],
+  providers: [HeatMapComponent, LegendService, TooltipService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
