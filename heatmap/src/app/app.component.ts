@@ -9,6 +9,10 @@ import { ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
+  // title: string = "My first Project";
+  // lat: number = 51.678418;
+  // lng: number = 7.809007;
+  
   dataSource: Object[] = [
     [73, 39, 26, 39, 94, 0],
     [93, 58, 53, 38, 26, 68],
