@@ -9,7 +9,16 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <my-app>
-  </my-app>
+  <!-- <my-app>
+  </my-app> -->
+  <google-chart #chart
+    [title]="title"
+    [type]="type"
+    [data]="data"
+    [columnNames]="columnNames"
+    [options]="options"
+    [width]="width"
+    [height]="height">
+  </google-chart>
 </body>
 </html>
