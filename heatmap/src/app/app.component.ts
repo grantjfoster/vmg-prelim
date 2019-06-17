@@ -12,7 +12,22 @@ export class AppComponent {
   // title: string = "My first Project";
   // lat: number = 51.678418;
   // lng: number = 7.809007;
-  
+
+  // var config = {
+  //   container: document.getElementById('heatmapContainer'),
+  //   radius: 10,
+  //   maxOpacity: .5,
+  //   minOpacity: 0,
+  //   blur: .75,
+  //   gradient: {
+  //     // enter n keys between 0 and 1 here
+  //     // for gradient color customization
+  //     '.5': 'blue',
+  //     '.8': 'red',
+  //     '.95': 'white'
+  //   }
+  // };
+
   dataSource: Object[] = [
     [73, 39, 26, 39, 94, 0],
     [93, 58, 53, 38, 26, 68],
@@ -27,4 +42,6 @@ export class AppComponent {
     [25, 56, 55, 58, 12, 82],
     [74, 33, 88, 23, 86, 59]
   ];
+
+  // var heatmapInstance = h337.create(config);
 }
