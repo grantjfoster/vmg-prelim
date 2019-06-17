@@ -3,9 +3,7 @@ import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'my-app', 
-  template: 
-    `<ejs-heatmap id='container' style="display:block;" [dataSource]='dataSource'>
-    </ejs-heatmap>`,
+  template: ``,
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
