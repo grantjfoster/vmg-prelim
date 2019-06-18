@@ -12,7 +12,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
   imports: [
     BrowserModule,
     HeatMapModule,
-    GoogleChartsModule
+    // GoogleChartsModule
   ],
   providers: [HeatMapComponent, LegendService, TooltipService],
   bootstrap: [AppComponent]
