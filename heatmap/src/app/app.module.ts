@@ -4,17 +4,21 @@ import { HeatMapModule, HeatMapComponent, LegendService, TooltipService} from '@
 import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     HeatMapModule,
+    AppRoutingModule,
     // GoogleChartsModule
   ],
   providers: [HeatMapComponent, LegendService, TooltipService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, HomeComponent]
 })
 export class AppModule { }
