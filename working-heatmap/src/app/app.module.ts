@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
     CommonModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyApxroCW7UZ1J9bXZf95rX4S4veW3kg-u8'
+      apiKey: 'AIzaSyApxroCW7UZ1J9bXZf95rX4S4veW3kg-u8' + '&libraries=visualization'
     })
   ],
   providers: [],
