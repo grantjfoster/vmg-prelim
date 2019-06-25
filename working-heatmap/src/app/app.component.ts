@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import { MatFormFieldModule } from '@angular/material';
 
 declare var google: any;
 
@@ -10,14 +11,36 @@ declare var google: any;
 
 export class AppComponent {
   title = 'working-heatmap';
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  lat: number = 37.782;
+  lng: number = -122.447;
 
+  public sport: string = "";
+  public month: number;
   private map: google.maps.Map = null;
   private heatmap: google.maps.visualization.HeatmapLayer = null;
 
+  // GET http://localhost:3000/api/search?sport=hiking&month=6
+
+  /*
+    {
+      "sport": "hiking",
+      "month": 6,
+      "locations": [
+        {
+          "lat": 12,
+          "lng": 1,
+          "weight": 1
+        }
+      ]
+    }
+  */
+
   onMapLoad(mapInstance: google.maps.Map) {
     this.map = mapInstance;
+
+    // Do the first get
+    // Subsequently use the search button on click to execute search
+    // this.search();
 
     const coords = [
       {location: new google.maps.LatLng(37.782, -122.447), weight: 0.5},

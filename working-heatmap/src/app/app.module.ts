@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core'; 
-
+import { MatFormFieldModule, MatSelectModule } from '@angular/material';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -16,7 +17,10 @@ import { AppComponent } from './app.component';
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyApxroCW7UZ1J9bXZf95rX4S4veW3kg-u8' + '&libraries=visualization'
-    })
+    }),
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
