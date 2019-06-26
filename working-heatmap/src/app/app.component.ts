@@ -28,12 +28,26 @@ export class AppComponent {
   search() {
     console.log("searching...");
     this.httpClient
-      .get("http://localhost:4200/api/search/" + this.sport + "/" + this.month)
+      .get("http://localhost:5000/api/search/" + this.sport + "/" + this.month)
       .subscribe(
         (response: any) => {
+          console.log(response);
           this.coords = response;
         }
       )
+    console.log("done with getting data");
+    console.log(this.coords);
+    for (var i = 0; i < this.coords.locations.length(); i++) {
+      const lat = this.coords.locations[i].lat;
+      const lng = this.coords.locations[i].lng;
+      const wgt = this.coords.locations[i].weight;
+      this.points.push({location: new google.maps.LatLng(lat, lng), weight: wgt});
+    }
+    console.log("here");
+    this.heatmap = new google.maps.visualization.HeatmapLayer({
+      map: this.map,
+      data: this.points
+    });
   }
   // GET http://localhost:3000/api/search?sport=hiking&month=6
 
@@ -58,34 +72,35 @@ export class AppComponent {
     // Subsequently use the search button on click to execute search
     // this.search();
 
-    // const coords = [
-    //   {location: new google.maps.LatLng(37.782, -122.447), weight: 0.5},
-    //   new google.maps.LatLng(37.782, -122.445),
-    //   {location: new google.maps.LatLng(37.782, -122.443), weight: 2},
-    //   {location: new google.maps.LatLng(37.782, -122.441), weight: 3},
-    //   {location: new google.maps.LatLng(37.782, -122.439), weight: 2},
-    //   new google.maps.LatLng(37.782, -122.437),
-    //   {location: new google.maps.LatLng(37.782, -122.435), weight: 0.5},
+    const coords = [
+      {location: new google.maps.LatLng(37.782, -122.447), weight: 0.5},
+      new google.maps.LatLng(37.782, -122.445),
+      {location: new google.maps.LatLng(37.782, -122.443), weight: 2},
+      {location: new google.maps.LatLng(37.782, -122.441), weight: 3},
+      {location: new google.maps.LatLng(37.782, -122.439), weight: 2},
+      new google.maps.LatLng(37.782, -122.437),
+      {location: new google.maps.LatLng(37.782, -122.435), weight: 0.5},
     
-    //   {location: new google.maps.LatLng(37.785, -122.447), weight: 3},
-    //   {location: new google.maps.LatLng(37.785, -122.445), weight: 2},
-    //   new google.maps.LatLng(37.785, -122.443),
-    //   {location: new google.maps.LatLng(37.785, -122.441), weight: 0.5},
-    //   new google.maps.LatLng(37.785, -122.439),
-    //   {location: new google.maps.LatLng(37.785, -122.437), weight: 2},
-    //   {location: new google.maps.LatLng(37.785, -122.435), weight: 3}
-    // ]
-    this.search();
-    for (var i = 0; i < this.coords.locations.length(); i++) {
-      const lat = this.coords.locations[i].lat;
-      const lng = this.coords.locations[i].lng;
-      const wgt = this.coords.locations[i].weight;
-      this.points.push({location: new google.maps.LatLng(lat, lng), weight: wgt});
-    }
+      {location: new google.maps.LatLng(37.785, -122.447), weight: 3},
+      {location: new google.maps.LatLng(37.785, -122.445), weight: 2},
+      new google.maps.LatLng(37.785, -122.443),
+      {location: new google.maps.LatLng(37.785, -122.441), weight: 0.5},
+      new google.maps.LatLng(37.785, -122.439),
+      {location: new google.maps.LatLng(37.785, -122.437), weight: 2},
+      {location: new google.maps.LatLng(37.785, -122.435), weight: 3}
+    ]
 
+    // for (var i = 0; i < this.coords.locations.length(); i++) {
+    //   const lat = this.coords.locations[i].lat;
+    //   const lng = this.coords.locations[i].lng;
+    //   const wgt = this.coords.locations[i].weight;
+    //   this.points.push({location: new google.maps.LatLng(lat, lng), weight: wgt});
+    // }
+    // console.log("here");
     this.heatmap = new google.maps.visualization.HeatmapLayer({
       map: this.map,
-      data: this.points
+      data: coords
     });
+    console.log("done loading map");
   }
 }
