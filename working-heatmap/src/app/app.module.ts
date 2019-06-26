@@ -4,7 +4,7 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core'; 
-import { MatFormFieldModule, MatSelectModule } from '@angular/material';
+import { MatFormFieldModule, MatSelectModule, MatButtonModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatButtonModule,
     HttpClientModule
   ],
   providers: [],

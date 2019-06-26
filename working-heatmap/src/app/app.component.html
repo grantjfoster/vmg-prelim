@@ -39,6 +39,8 @@
 
 <p>You selected: {{sport}} and {{month}}</p>
 
+<button mat-raised-button (click)="search()">Search</button>
+
 
   
 <agm-map [latitude]="lat" [longitude]="lng" (mapReady)="onMapLoad($event)">
