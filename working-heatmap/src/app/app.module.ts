@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core'; 
 import { MatFormFieldModule, MatSelectModule } from '@angular/material';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AppComponent } from './app.component';
     }),
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

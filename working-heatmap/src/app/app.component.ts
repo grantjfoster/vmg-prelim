@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-// import { MatFormFieldModule } from '@angular/material';
+import { HttpClient } from '@angular/common/http';
 
 declare var google: any;
 
@@ -19,6 +19,13 @@ export class AppComponent {
   private map: google.maps.Map = null;
   private heatmap: google.maps.visualization.HeatmapLayer = null;
 
+  constructor(
+    private httpClient: HttpClient
+  ) {}
+  
+  search() {
+    
+  }
   // GET http://localhost:3000/api/search?sport=hiking&month=6
 
   /*
