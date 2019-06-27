@@ -17,9 +17,11 @@ export class AppComponent {
   public sport: string = "";
   public month: number = 0;
   public coords: any;
-  public points: Array<any>;
+  public points = [];
   private map: google.maps.Map = null;
   private heatmap: google.maps.visualization.HeatmapLayer = null;
+
+
 
   constructor(
     private httpClient: HttpClient
@@ -33,21 +35,22 @@ export class AppComponent {
         (response: any) => {
           console.log(response);
           this.coords = response;
+          for (var i = 0; i < this.coords.locations.length; i++) {
+            const lat = this.coords.locations[i].lat;
+            const lng = this.coords.locations[i].lng;
+            const wgt = this.coords.locations[i].weight;
+            let latlng = new google.maps.LatLng({lat: lat, lng: lng});
+            var point = {
+              location: latlng, 
+              weight: wgt
+            }
+          }
+          this.heatmap = new google.maps.visualization.HeatmapLayer({
+            map: this.map,
+            data: this.points
+          });
         }
-      )
-    console.log("done with getting data");
-    console.log(this.coords);
-    for (var i = 0; i < this.coords.locations.length(); i++) {
-      const lat = this.coords.locations[i].lat;
-      const lng = this.coords.locations[i].lng;
-      const wgt = this.coords.locations[i].weight;
-      this.points.push({location: new google.maps.LatLng(lat, lng), weight: wgt});
-    }
-    console.log("here");
-    this.heatmap = new google.maps.visualization.HeatmapLayer({
-      map: this.map,
-      data: this.points
-    });
+      ) 
   }
   // GET http://localhost:3000/api/search?sport=hiking&month=6
 
