@@ -28,6 +28,7 @@ export class AppComponent {
   ) {}
   
   search() {
+    this.points = [];
     console.log("searching...");
     this.httpClient
       .get("http://localhost:5000/api/search/" + this.sport + "/" + this.month)
@@ -44,6 +45,7 @@ export class AppComponent {
               location: latlng, 
               weight: wgt
             }
+            this.points.push(point);
           }
           this.heatmap = new google.maps.visualization.HeatmapLayer({
             map: this.map,
