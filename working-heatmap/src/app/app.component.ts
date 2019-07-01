@@ -29,6 +29,7 @@ export class AppComponent {
   
   search() {
     this.points = [];
+    this.map = null;
     console.log("searching...");
     this.httpClient
       .get("http://localhost:5000/api/search/" + this.sport + "/" + this.month)
