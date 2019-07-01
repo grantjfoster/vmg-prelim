@@ -29,6 +29,9 @@ export class AppComponent {
   
   search() {
     this.points = [];
+    this.coords = [];
+    // this.map = null;
+    // this.heatmap = null;
     console.log("searching...");
     this.httpClient
       .get("http://localhost:5000/api/search/" + this.sport + "/" + this.month)
