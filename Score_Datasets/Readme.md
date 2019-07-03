@@ -1,1 +1,1 @@
-This folder contains the datasets that will be used by the heat map
+This folder contains the datasets that includes city, longitude, latitude and score which will be used for the google maps API.
