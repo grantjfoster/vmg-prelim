@@ -30,9 +30,6 @@ export class AppComponent {
   search() {
     this.points = [];
     this.coords = [];
-    // this.map = null;
-    // this.heatmap = null;
-    console.log("searching...");
     this.httpClient
       .get("http://localhost:5000/api/search/" + this.sport + "/" + this.month)
       .subscribe(
@@ -56,8 +53,12 @@ export class AppComponent {
         }
       ) 
   }
+  // this is the get request to return information for the heatmap
   // GET http://localhost:3000/api/search?sport=hiking&month=6
 
+  
+  // this is the format for the data being returned from the database
+  // via the API
   /*
     {
       "sport": "hiking",
@@ -79,6 +80,7 @@ export class AppComponent {
     // Subsequently use the search button on click to execute search
     // this.search();
 
+    // this is just dummy data that was pulled from the Google Maps API
     // const coords = [
     //   {location: new google.maps.LatLng(37.782, -122.447), weight: 0.5},
     //   new google.maps.LatLng(37.782, -122.445),
@@ -97,13 +99,6 @@ export class AppComponent {
     //   {location: new google.maps.LatLng(37.785, -122.435), weight: 3}
     // ]
 
-    // for (var i = 0; i < this.coords.locations.length(); i++) {
-    //   const lat = this.coords.locations[i].lat;
-    //   const lng = this.coords.locations[i].lng;
-    //   const wgt = this.coords.locations[i].weight;
-    //   this.points.push({location: new google.maps.LatLng(lat, lng), weight: wgt});
-    // }
-    // console.log("here");
     this.heatmap = new google.maps.visualization.HeatmapLayer({
       map: this.map,
       data: this.points
