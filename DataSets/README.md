@@ -1,0 +1,1 @@
+The folder contains the original datasets, that are cleaned but they still need to be scored. The file "city_attributes.csv" contains information on the city, and it's respective longitude and latitude. It is useful for concatenating onto other datasets so that the data set will include all the data that is needed for the heatmap.
